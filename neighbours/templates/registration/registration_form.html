@@ -1,0 +1,23 @@
+{%extends 'registration/base.html'%}
+{% load bootstrap4%}
+{%load static%}
+{{block.supper}}
+{%block content%}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <form class=" form form-group" action="/accounts/register/" method="post">
+          <h1>Register</h1>
+          {%csrf_token%}
+          {%bootstrap_form form%}
+          <button class="btn btn-info" type="submit" name="button">Login</button>
+        </form>
+
+      </div>
+      <div class="col-md-3"></div>
+
+    </div>
+
+  </div>
+{%endblock%}
