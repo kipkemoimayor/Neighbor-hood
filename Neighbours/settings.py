@@ -46,6 +46,7 @@ REGISTRATION_OPEN=True
 
 INSTALLED_APPS = [
     'neighbours',
+    'bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
