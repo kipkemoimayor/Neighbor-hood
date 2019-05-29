@@ -16,3 +16,7 @@ class Profile(models.Model):
     fullname=models.CharField(max_length=50)
     neigbor=models.ManyToManyField(Neighbour)
     user=models.ForeignKey(User,on_delete=models.CASCADE)
+    def __str__(self):
+        return self.fullname
+
+        

@@ -12,5 +12,5 @@ class ProfileForm(forms.ModelForm):
         model=Profile
         exclude=['user']
         widgets={
-            "neigbor":forms.CheckboxSelectMultiple(),
+            "neigbor":forms.Select(),
         }

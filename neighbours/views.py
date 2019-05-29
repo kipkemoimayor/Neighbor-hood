@@ -6,9 +6,10 @@ def index(request):
 
 def profile(request):
     if request.method=='POST':
-        form=(request.POST)
+        form=ProfileForm(request.POST)
         if form.is_valid():
             profile=form.save(commit=False)
+            profile.user=request.user
             profile.save()
     else:
 
