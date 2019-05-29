@@ -7,9 +7,12 @@ class Neighbour(models.Model):
     location=models.CharField(max_length=220)
     occupationCount=models.IntegerField()
 
+    def __str__(self):
+        return self.name
+
 
 
 class Profile(models.Model):
     fullname=models.CharField(max_length=50)
-    neigbor=models.ForeignKey(Neighbour,on_delete=models.CASCADE)
+    neigbor=models.ManyToManyField(Neighbour)
     user=models.ForeignKey(User,on_delete=models.CASCADE)

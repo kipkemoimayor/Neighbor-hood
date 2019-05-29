@@ -18,7 +18,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/accounts/login/">Login</a>
-          <a class="dropdown-item" href="#">{{user}}</a>
+          <a class="dropdown-item" href="{%url 'profile'%}{{user.username}}">{{user}}</a>
           <div class="dropdown-divider"> <hr class="bg-default"></div>
           <a class="dropdown-item" href="/logout">logout</a>
         </div>

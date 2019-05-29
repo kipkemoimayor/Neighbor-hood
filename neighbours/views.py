@@ -5,5 +5,12 @@ def index(request):
     return render(request,'index.html')
 
 def profile(request):
-    form=ProfileForm()
-    return render(request,'profile.html')
+    if request.method=='POST':
+        form=(request.POST)
+        if form.is_valid():
+            profile=form.save(commit=False)
+            profile.save()
+    else:
+
+        form=ProfileForm()
+    return render(request,'profile.html',{'form':form})

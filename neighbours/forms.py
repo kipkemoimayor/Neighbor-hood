@@ -1,5 +1,5 @@
-from . models import Profile
-from django.forms import forms
+from . models import Profile,Neighbour
+from django import forms
 
 
 '''
@@ -7,8 +7,10 @@ forms here
 '''
 
 class ProfileForm(forms.ModelForm):
-    model=Profile
-    exclude=['user']
-    widgets={
-        Neighbour:select(),
-    }
+    class Meta:
+
+        model=Profile
+        exclude=['user']
+        widgets={
+            "neigbor":forms.CheckboxSelectMultiple(),
+        }
