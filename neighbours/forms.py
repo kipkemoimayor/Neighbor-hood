@@ -1,4 +1,4 @@
-from . models import Profile,Neighbour
+from . models import Profile,Neighbour,Businesses
 from django import forms
 
 
@@ -14,3 +14,8 @@ class ProfileForm(forms.ModelForm):
         widgets={
             "neigbor":forms.Select(),
         }
+
+class BusinessForm(forms.ModelForm):
+    class Meta:
+        model=Businesses
+        exclude=['user','neigbor']

@@ -17,10 +17,14 @@
             More
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/accounts/login/">Login</a>
+          {%if user.is_authenticated%}
           <a class="dropdown-item" href="{%url 'profile'%}{{user.username}}">{{user}}</a>
           <div class="dropdown-divider"> <hr class="bg-default"></div>
           <a class="dropdown-item" href="/logout">logout</a>
+          {%else%}
+          <a class="dropdown-item" href="/accounts/login/">Login</a>
+
+          {%endif%}
         </div>
       </li>
       <li class="nav-item">
