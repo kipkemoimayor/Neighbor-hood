@@ -2,12 +2,8 @@
 {%load bootstrap4%}
 {%block content%}
 <div class="container">
-  <form class="" action="/profile/" method="post">
-    {%csrf_token%}
-    {%bootstrap_form form%}
-    <button class="btn btn-info" type="submit" name="button">submit</button>
-
-  </form>
+  <h1>Profile here</h1>
+  <a class="btn btn-info" href="{%url 'edit'%}{{user.username}}">EDit profile</a>
 </div>
 
 {%endblock%}

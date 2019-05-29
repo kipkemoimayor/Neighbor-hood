@@ -5,6 +5,11 @@ def index(request):
     return render(request,'index.html')
 
 def profile(request):
+
+    return render(request,'profile.html')
+
+def edit(request):
+
     if request.method=='POST':
         form=ProfileForm(request.POST)
         if form.is_valid():
@@ -14,4 +19,6 @@ def profile(request):
     else:
 
         form=ProfileForm()
-    return render(request,'profile.html',{'form':form})
+
+    title="Edit"
+    return render(request,'edit.html',{'form':form,'title':title})
