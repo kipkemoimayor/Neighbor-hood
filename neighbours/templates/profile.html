@@ -2,8 +2,20 @@
 {%load bootstrap4%}
 {%block content%}
 <div class="container">
-  <h1>Profile here</h1>
-  <a class="btn btn-info" href="{%url 'edit'%}{{user.username}}">EDit profile</a>
+  <div class="row">
+    <div class="col-md-6">
+      {%for pro in profile%}
+        <p>{{pro.fullname}}</p>
+        <p>{{pro.neigbor.name}}</p>
+      {%endfor%}
+    </div>
+    <div class="col-md-6">
+      <h1>Profile here</h1>
+      <a class="btn btn-info" href="{%url 'edit'%}{{user.username}}">EDit profile</a>
+    </div>
+
+  </div>
+
 </div>
 
 {%endblock%}
