@@ -12,27 +12,28 @@
       <li class="nav-item active">
         <a id="ho" class="nav-link" href="/"><i class="fas fa-house-damage"></i> <span class="sr-only">(current)</span></a>
       </li>
+        {%if user.is_authenticated%}
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             More
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          {%if user.is_authenticated%}
+
           <a class="dropdown-item" href="{%url 'profile'%}{{user.username}}">{{user}}</a>
           <div class="dropdown-divider"> <hr class="bg-default"></div>
           <a class="dropdown-item" href="/logout">logout</a>
-
+          {%endif%}
         </div>
       </li>
     </ul>
+    {%if user.is_authenticated%}
     <a class="btn btn-success btn-sm" href="/">Add Business</a>
     {%else%}
     <a class="log" href="/accounts/login/">Login</a>
     <a class="btn btn-success btn-sm" href="/accounts/register/">SignUp</a>
-
     {%endif%}
-
   </div>
+
 
 </nav>
 </div>
