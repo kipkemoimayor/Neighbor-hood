@@ -14,6 +14,7 @@ class Neighbour(models.Model):
 
 class Profile(models.Model):
     fullname=models.CharField(max_length=50)
+    image=models.ImageField(upload_to='profile/',blank=True)
     neigbor=models.ForeignKey(Neighbour,on_delete=models.CASCADE)
     location=models.CharField(max_length=50,default='set location')
     secondaryEmail=models.CharField(max_length=50,default='@gmail.com')
@@ -32,6 +33,7 @@ class Businesses(models.Model):
         return self.businessesName
 
 class Feeds(models.Model):
+    image=models.ImageField(upload_to='feeds/',blank=True)
     post=models.CharField(max_length=200)
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     neigbor=models.ForeignKey(Neighbour,on_delete=models.CASCADE)

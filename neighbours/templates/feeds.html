@@ -11,21 +11,28 @@
     <div class="col-md-6">
       <div class="card">
         <div class="card-body">
-          <h1>Feeds</h1>
-          <form class="" action="/feeds/neighbour/" method="post">
+          <h4>Next Door Trending News</h4>
+          <form class="" enctype="multipart/form-data" action="/feeds/neighbour/" method="post">
             {%csrf_token%}
             {%bootstrap_form form layout='inline'%}
-            <button class="btn btn-success btn-sm" type="submit" name="button">Post </button>
+            <button id='upload' class="btn btn-success btn-sm" type="submit" name="button">Post </button>
           </form>
         </div>
 
       </div>
+      <br>
 
       <div class="feeds">
         {%for fed in feed%}
         <div class="card">
+          <div class="card-header">
+            {{fed.user}}
+          </div>
           <p>{{fed.post}}</p>
-
+          <img class="img-fluid" src="{{fed.image.url}}" alt="">
+          <div class="card-footer">
+            <i></i>
+          </div>
         </div>
         {%endfor%}
 

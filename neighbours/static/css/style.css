@@ -50,3 +50,12 @@ height: 100%;
 #ho{
   color:green;
 }
+@media screen and (min-width:1000px) {
+  #upload{
+    position: relative;
+    right: -520px;
+    top: -57px;
+    opacity: 0.8;
+  }
+
+}
