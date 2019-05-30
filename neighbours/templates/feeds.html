@@ -9,7 +9,25 @@
       <p class="alert alert-success">Neighbour hoods</p>
     </div>
     <div class="col-md-6">
-      <h1>Feeds</h1>
+      <div class="card">
+        <div class="card-body">
+          <h1>Feeds</h1>
+          <form class="" action="/feeds/neighbour/" method="post">
+            {%csrf_token%}
+            {%bootstrap_form form layout='inline'%}
+            <button class="btn btn-success btn-sm" type="submit" name="button">Post </button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="feeds">
+        <div class="card">
+
+        </div>
+
+      </div>
+
     </div>
     <div class="col-md-3">
       <p class="alert alert-success">Businesses nearby  </p>

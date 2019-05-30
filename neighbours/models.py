@@ -30,3 +30,8 @@ class Businesses(models.Model):
 
     def __str__(self):
         return self.businessesName
+
+class Feeds(models.Model):
+    post=models.CharField(max_length=200)
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
+    neigbor=models.ForeignKey(Neighbour,on_delete=models.CASCADE)

@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
-from .forms import ProfileForm,BusinessForm
-from .models import Profile,Businesses
+from .forms import ProfileForm,BusinessForm,PostForm
+from .models import Profile,Businesses,Neighbour
 from django.http import HttpResponse
 
 # Create your views here.
@@ -56,4 +56,15 @@ def feeds(request):
     except Exception as e:
         raise  Http404()
 
-    return render(request,"feeds.html",{"id":id,"business":business})
+    if request.method=='POST':
+        form=PostForm(request.POST,request.FILES)
+        if form.is_valid():
+            post=form.save(commit=False)
+            post.user=request.user
+            post.neigbor=Neighbour(id)
+            post.save()
+        return redirect('feeds')
+    else:
+        form=PostForm()
+
+    return render(request,"feeds.html",{"business":business,'form':form})
