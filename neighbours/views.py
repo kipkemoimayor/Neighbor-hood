@@ -41,3 +41,7 @@ def business(request):
     else:
         form=BusinessForm()
     return render(request,'business.html',{'form':form})
+
+def feeds(request):
+    
+    return render(request,"feeds.html")
