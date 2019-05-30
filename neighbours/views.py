@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import ProfileForm,BusinessForm,PostForm
+from .forms import ProfileForm,BusinessForm,PostForm,UpdateForm
 from .models import Profile,Businesses,Neighbour,Feeds
 from django.http import HttpResponse,Http404
 
@@ -9,10 +9,22 @@ def index(request):
     return render(request,'index.html',{'profile':profile})
 
 def profile(request):
+    instance=Profile.objects.get(user=request.user)
     profile=Profile.objects.filter(user=request.user)
+    if request.method=='POST':
+        form=UpdateForm(request.POST or None,request.FILES,instance=instance)
+        if form.is_valid():
+            upda=form.save(commit=False)
+            upda.save()
 
 
-    return render(request,'profile.html',{'profile':profile})
+        return redirect('profile')
+    else:
+        form=UpdateForm()
+
+
+
+    return render(request,'profile.html',{'profile':profile,"form":form})
 
 def edit(request):
 

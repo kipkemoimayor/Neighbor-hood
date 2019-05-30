@@ -24,3 +24,11 @@ class PostForm(forms.ModelForm):
     class Meta:
         model=Feeds
         exclude=['user','neigbor']
+
+class UpdateForm(forms.ModelForm):
+    class Meta:
+        model=Profile
+        exclude=['user']
+        widgets={
+            "neigbor":forms.Select(),
+        }

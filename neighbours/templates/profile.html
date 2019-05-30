@@ -6,15 +6,19 @@
   <div class="row">
     <div id="pro" class="col-md-4">
       <br>
+      {%for pro in profile%}
       <div class="img">
-        <img class="rounded-circle img-fluid" src="" alt="">
-        {{user}}
+        <img height="150" width="150" class="rounded-circle" src="{{pro.image.url}}" alt="">
+      <i class="name"> {{user}}</i>
+      <div class="pap">
+        <p>{{pro.fullname}}</p>
+        <p>Hood | {{pro.neigbor.name}}</p>
+        <p>{{pro.user.email}}</p>
+      </div>
 
       </div>
-      {%for pro in profile%}
-        <p>{{pro.fullname}}</p>
-        <p>{{pro.neigbor.name}}</p>
-        <p>{{pro.user.email}}</p>
+
+
       {%endfor%}
     </div>
     <div class="col-md-8">
@@ -29,12 +33,35 @@
       </div>
       <div class="edit">
         {%if profile%}
-        <a class="btn btn-info" href="{%url 'edit'%}{{user.username}}">Edit profile</a>
+        <a href="" class="btn btn-info" data-toggle="modal" data-target="#modalRegisterForm">Edit profile</a>
         {%else%}
         <a class="btn btn-info" href="{%url 'edit'%}{{user.username}}">Update Profile</a>
         {%endif%}
         <a class="btn btn-info" href="{%url 'busi'%}">Add a business</a>
       </div>
+      <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Update Profile</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <form class="form-group" enctype="multipart/form-data" action="/profile/" method="post">
+          {%csrf_token%}
+          {%bootstrap_form form%}
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn-deep-orange">Update</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

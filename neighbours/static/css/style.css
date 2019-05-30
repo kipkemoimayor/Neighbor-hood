@@ -94,3 +94,9 @@ height: 100%;
   background-position: center;
   background-size: cover
 }
+.name{
+  font-weight: 500;
+}
+.pap{
+  padding: 10px;
+}
