@@ -46,6 +46,7 @@ def business(request):
 def feeds(request):
 
     try:
+        all_hoods=Neighbour.objects.all()
         profile=Profile.objects.filter(user=request.user)
         arr=[]
         for i in profile:
@@ -68,4 +69,4 @@ def feeds(request):
     else:
         form=PostForm()
 
-    return render(request,"feeds.html",{"business":business,'form':form,'feed':feed})
+    return render(request,"feeds.html",{"business":business,'form':form,'feed':feed,'hoods':all_hoods})

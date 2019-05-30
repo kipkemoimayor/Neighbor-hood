@@ -59,3 +59,7 @@ height: 100%;
   }
 
 }
+#health{
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
