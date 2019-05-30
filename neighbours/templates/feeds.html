@@ -13,6 +13,17 @@
     </div>
     <div class="col-md-3">
       <p class="alert alert-success">Businesses nearby  </p>
+      {%if business%}
+      {%for busi in business%}
+        <ul class="form-group">
+          <li class="list-group-item">{{busi.businessesName}}</li>
+        </ul>
+      {%endfor%}
+      {%else%}
+      <p class="alert alert-info">Hi <strong>{{user}}</strong> No business  has been registered yet in your area <br>
+          <a href="">Add a business</a>
+      </p>
+      {%endif%}
     </div>
 
   </div>

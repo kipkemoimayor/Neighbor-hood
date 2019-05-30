@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import ProfileForm,BusinessForm
-from .models import Profile
+from .models import Profile,Businesses
+from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
@@ -43,5 +44,16 @@ def business(request):
     return render(request,'business.html',{'form':form})
 
 def feeds(request):
-    
-    return render(request,"feeds.html")
+
+    try:
+        profile=Profile.objects.filter(user=request.user)
+        arr=[]
+        for i in profile:
+            arr.append(i.neigbor.id)
+
+        id=arr[0]
+        business=Businesses.objects.filter(neigbor=id)
+    except Exception as e:
+        raise  Http404()
+
+    return render(request,"feeds.html",{"id":id,"business":business})
