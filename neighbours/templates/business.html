@@ -1,6 +1,7 @@
 {%extends 'base.html'%}
 {%load bootstrap4%}
 {%block content%}
+{%include 'genNav.html'%}
 <form class="" action="{%url 'busi'%}" method="post">
   {%csrf_token%}
   {%bootstrap_form form %}

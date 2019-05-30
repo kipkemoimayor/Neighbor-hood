@@ -2,6 +2,7 @@
 {{block.super}}
 
 {%block content%}
+  {%include 'navbar.html'%}
 
 <!--Carousel Wrapper-->
  <div id="nextDoor" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
@@ -30,9 +31,16 @@
                <p class="font-weight-bold text-uppercase py-4">Discover Your NeighbourHood</p>
              </li>
              {%if user.is_authenticated%}
+              {%if profile%}
+              <li class="list-inline-item">
+                <a target="_blank" href="" class="btn btn-cyan btn-lg btn-rounded ml-0">See latest news</a>
+              </li>
+              {%else%}
+
              <li class="list-inline-item">
                <a  href="{%url 'profile'%}{{user.username}}" class="btn btn-unique btn-lg btn-rounded mr-0">Please Update your profile</a>
              </li>
+             {%endif%}
              {%else%}
              <li class="list-inline-item">
                <a  href="/accounts/register/" class="btn btn-unique btn-lg btn-rounded mr-0">Sign up!</a>

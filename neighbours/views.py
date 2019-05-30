@@ -4,7 +4,8 @@ from .models import Profile
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    profile=Profile.objects.filter(user_id=request.user.id)
+    return render(request,'index.html',{'profile':profile})
 
 def profile(request):
     profile=Profile.objects.filter(user=request.user)
