@@ -27,3 +27,6 @@ class Businesses(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     neigbor=models.ForeignKey(Neighbour,on_delete=models.CASCADE)
     email=models.EmailField(max_length=50)
+
+    def __str__(self):
+        return self.businessesName

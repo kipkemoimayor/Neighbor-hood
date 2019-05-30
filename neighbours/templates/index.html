@@ -2,7 +2,106 @@
 {{block.super}}
 
 {%block content%}
-  <div class="jumbotron">
-    <h1>Neigbours</h1>
-  </div>
+
+<!--Carousel Wrapper-->
+ <div id="carousel-example-1" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
+
+   <!--Indicators-->
+   <ol class="carousel-indicators">
+     <li data-target="#carousel-example-1" data-slide-to="0" class="active"></li>
+     <li data-target="#carousel-example-1" data-slide-to="1"></li>
+     <li data-target="#carousel-example-1" data-slide-to="2"></li>
+   </ol>
+   <!--/.Indicators-->
+
+   <!--Slides-->
+   <div class="carousel-inner" role="listbox">
+
+     <!--First slide-->
+     <div class="carousel-item active">
+       <!--Mask-->
+       <div class="view">
+         <div class="full-bg-img flex-center mask rgba-indigo-light white-text">
+           <ul class="animated fadeInUp col-md-12 list-unstyled list-inline">
+             <li>
+               <h1 class="font-weight-bold text-uppercase">NeighbourHood</h1>
+             </li>
+             <li>
+               <p class="font-weight-bold text-uppercase py-4">Discover Your NeighbourHood</p>
+             </li>
+             <li class="list-inline-item">
+               <a  href="/accounts/register/" class="btn btn-unique btn-lg btn-rounded mr-0">Sign up!</a>
+             </li>
+             <li class="list-inline-item">
+               <a target="_blank" href="" class="btn btn-cyan btn-lg btn-rounded ml-0">See latest news</a>
+             </li>
+           </ul>
+         </div>
+       </div>
+       <!--/.Mask-->
+     </div>
+     <!--/.First slide-->
+
+     <!--Second slide -->
+     <div class="carousel-item">
+       <!--Mask-->
+       <div class="view">
+         <div class="full-bg-img flex-center mask rgba-purple-light white-text">
+           <ul class="animated fadeInUp col-md-12 list-unstyled">
+             <li>
+               <h1 class="font-weight-bold text-uppercase">Dont be Left out Join the community</h1>
+             </li>
+             <li>
+               <p class="font-weight-bold text-uppercase py-4">Do you need to hire someone real quick</p>
+             </li>
+             <li>
+               <form class="form-inline my-2 my-lg-0">
+                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+               </form>
+             </li>
+           </ul>
+         </div>
+       </div>
+       <!--/.Mask-->
+     </div>
+     <!--/.Second slide -->
+
+     <!--Third slide-->
+     <div class="carousel-item">
+       <!--Mask-->
+       <div class="view">
+         <div class="full-bg-img flex-center mask rgba-blue-light white-text">
+           <ul class="animated fadeInUp col-md-12 list-unstyled">
+             <li>
+               <h1 class="font-weight-bold text-uppercase">Visit our support forum</h1></li>
+             <li>
+               <p class="font-weight-bold text-uppercase py-4">Our community can help you with any question</p>
+             </li>
+             <li>
+               <a target="_blank" href="https://mdbootstrap.com/forums/forum/support/" class="btn btn-lg btn-indigo btn-rounded">Support forum</a>
+             </li>
+           </ul>
+         </div>
+       </div>
+       <!--/.Mask-->
+     </div>
+     <!--/.Third slide-->
+
+   </div>
+   <!--/.Slides-->
+
+   <!--Controls-->
+   <a class="carousel-control-prev" href="#carousel-example-1" role="button" data-slide="prev">
+     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+     <span class="sr-only">Previous</span>
+   </a>
+   <a class="carousel-control-next" href="#carousel-example-1" role="button" data-slide="next">
+     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+     <span class="sr-only">Next</span>
+   </a>
+   <!--/.Controls-->
+ </div>
+ <!--/.Carousel Wrapper-->
+
 {%endblock%}

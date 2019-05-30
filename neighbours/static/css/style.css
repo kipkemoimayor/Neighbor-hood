@@ -1,0 +1,52 @@
+/* Necessary for full page carousel*/
+html,
+body,
+.view {
+height: 100%;
+}
+
+/* Carousel*/
+.carousel,
+.carousel-item,
+.carousel-item.active {
+height: 100%;
+}
+.carousel-inner {
+  height: 100%;
+}
+.carousel-item:nth-child(1) {
+  background-image: url(../img/slide1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.carousel-item:nth-child(2) {
+  background-image: url("../img/slide2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.carousel-item:nth-child(3) {
+  background-image: url("../img/slide3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+#nav{
+  box-shadow: none !important
+}
+.log{
+  padding: 5px;
+  color: rgba(0,0,0,0.5);
+  font-weight: 500;
+
+}
+.log:hover{
+  color: rgba(0,0,0,0.8);
+}
+#nav > a:first-child{
+  color :green;
+}
+#ho{
+  color:green;
+}
