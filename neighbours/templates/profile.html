@@ -2,18 +2,41 @@
 {%load bootstrap4%}
 {%block content%}
 {%include 'genNav.html'%}
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-6">
+    <div id="pro" class="col-md-4">
+      <br>
+      <div class="img">
+        <img class="rounded-circle img-fluid" src="" alt="">
+        {{user}}
+
+      </div>
       {%for pro in profile%}
         <p>{{pro.fullname}}</p>
         <p>{{pro.neigbor.name}}</p>
+        <p>{{pro.user.email}}</p>
       {%endfor%}
     </div>
-    <div class="col-md-6">
-      <h1>Profile here</h1>
-      <a class="btn btn-info" href="{%url 'edit'%}{{user.username}}">EDit profile</a>
-      <a class="btn btn-info" href="{%url 'busi'%}">Add a business</a>
+    <div class="col-md-8">
+      <div class="imagePro">
+        <div class="overlay">
+          <form id="search" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search NeighbourHood" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0 btn-sm" type="submit">Search</button>
+          </form>
+
+        </div>
+      </div>
+      <div class="edit">
+        {%if profile%}
+        <a class="btn btn-info" href="{%url 'edit'%}{{user.username}}">Edit profile</a>
+        {%else%}
+        <a class="btn btn-info" href="{%url 'edit'%}{{user.username}}">Update Profile</a>
+        {%endif%}
+        <a class="btn btn-info" href="{%url 'busi'%}">Add a business</a>
+      </div>
+
+
 
     </div>
 

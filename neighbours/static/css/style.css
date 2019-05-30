@@ -63,3 +63,34 @@ height: 100%;
   text-decoration: underline;
   text-decoration-style: wavy;
 }
+#pro{
+  color:white;
+  height: 91vh;
+  background-color: rgba(0,0,0,0.9);
+}
+.imagePro{
+  height: 50vh;
+  background-image: url(../img/neii.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.overlay{
+    height: 50vh;
+    background-color: rgba(0,0,0,0.5);
+}
+#search{
+  padding: 50px;
+  margin-left: 250px;
+  opacity: 0.7;
+}
+.edit{
+  text-align: center;
+}
+.img{
+  height: 50vh;
+  background-image: url(../img/pro.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover
+}
