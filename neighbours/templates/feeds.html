@@ -76,7 +76,9 @@
             {{fed.user}}
           </div>
           <p>{{fed.post}}</p>
+          {%if fed.image%}
           <img class="img-fluid" src="{{fed.image.url}}" alt="">
+          {%endif%}
           <div class="card-footer">
             <i></i>
           </div>

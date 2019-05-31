@@ -82,6 +82,26 @@
   </div>
 </div>
 
+<!-- feeds post and business-->
+
+<div class="row">
+  <div class="col-md-6">
+    <h4>Your Posts</h4>
+    {%for po in post%}
+      <p>{{po.post}}</p>
+    {%endfor%}
+  </div>
+  <div class="col-md-6">
+<h4>business You have added</h4>
+{%for bu in busi%}
+<ul>
+  <li>{{bu.businessesName}}</li>
+</ul>
+{%endfor%}
+  </div>
+
+</div>
+
 
 
     </div>

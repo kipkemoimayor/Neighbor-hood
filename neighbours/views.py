@@ -11,7 +11,8 @@ def index(request):
 
 def profile(request):
     profile=Profile.objects.filter(user=request.user)
-
+    busi=Businesses.objects.filter(user=request.user)
+    post=Feeds.objects.filter(user=request.user)
     if request.method=='POST':
         instance=Profile.objects.get(user=request.user)
         form=UpdateForm(request.POST or None,request.FILES,instance=instance)
@@ -35,7 +36,7 @@ def profile(request):
         change=ChangeHood()
 
     title='Profile'
-    return render(request,'profile.html',{'profile':profile,"form":form,'title':title,'change':change})
+    return render(request,'profile.html',{'profile':profile,"busi":busi,'post':post,"form":form,'title':title,'change':change})
 
 def edit(request):
 
