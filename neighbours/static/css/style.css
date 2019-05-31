@@ -102,5 +102,23 @@ height: 100%;
 }
 #show{
   display: none;
+
+}
+.feeds{
+  overflow-y: auto;
+  height: 600px;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+#top{
+  border: 1px solid rgba(0,0,0,0.2);
+  box-shadow: none !important;
+}
+#top h4{
+  text-align: center;
+  color:green;
+}
+.image{
   
 }

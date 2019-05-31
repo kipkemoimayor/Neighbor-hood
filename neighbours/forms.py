@@ -24,6 +24,9 @@ class PostForm(forms.ModelForm):
     class Meta:
         model=Feeds
         exclude=['user','neigbor']
+        widgets={
+            'post': forms.TextInput(attrs={'placeholder':'Tell us whats goin on'}),
+        }
 
 class UpdateForm(forms.ModelForm):
     class Meta:

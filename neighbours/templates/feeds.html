@@ -2,7 +2,7 @@
 {%load bootstrap4%}
 {%block content%}
 {%include 'genNav.html'%}
-
+<br>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-3">
@@ -53,9 +53,10 @@
       </ul>
     </div>
     <div class="col-md-6">
-      <div class="card">
-        <div class="card-body">
+      <div id="top" class="card">
+        <div  class="card-body">
           <h4>Next Door Trending News</h4>
+          <i>{{user}} Share whats in your mind</i>
           <form class="" enctype="multipart/form-data" action="/feeds/neighbour/" method="post">
             {%csrf_token%}
             {%bootstrap_form form layout='inline'%}
