@@ -2,13 +2,25 @@
 {%load bootstrap4%}
 {%block content%}
 {%include 'genNav.html'%}
+<br>
 <div class="container">
-  <form class="" action="/edit/" method="post">
-    {%csrf_token%}
-    {%bootstrap_form form%}
-    <button class="btn btn-info" type="submit" name="button">submit</button>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="form animated fadeIn">
+        <form class="" action="/edit/" method="post" enctype="multipart/form-data">
+          {%csrf_token%}
+          {%bootstrap_form form %}
+          <button class="btn btn-success btn-sm" type="submit" name="button">Submit</button>
+        </form>
+      </div>
 
-  </form>
+
+    </div>
+    <div class="col-md-3"></div>
+
+  </div>
+
 </div>
 
 {%endblock%}
