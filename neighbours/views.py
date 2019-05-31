@@ -60,7 +60,7 @@ def business(request):
 def feeds(request):
 
     try:
-        all_hoods=Neighbour.objects.all()
+
         profile=Profile.objects.filter(user=request.user)
         arr=[]
         for i in profile:
@@ -69,6 +69,8 @@ def feeds(request):
         id=arr[0]
         business=Businesses.objects.filter(neigbor=id)
         feed=Feeds.objects.filter(neigbor=id)
+        pop_count=Profile.objects.filter(neigbor=id)
+        all_hoods=Neighbour.objects.filter(id=id)
     except Exception as e:
         raise  Http404()
 
@@ -82,5 +84,5 @@ def feeds(request):
         return redirect('feeds')
     else:
         form=PostForm()
-
-    return render(request,"feeds.html",{"business":business,'form':form,'feed':feed,'hoods':all_hoods})
+    title='Feeds'
+    return render(request,"feeds.html",{"business":business,'form':form,'feed':feed,'hoods':all_hoods,'title':title,'pop':pop_count})
