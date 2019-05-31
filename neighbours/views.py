@@ -6,7 +6,8 @@ from django.http import HttpResponse,Http404
 # Create your views here.
 def index(request):
     profile=Profile.objects.filter(user_id=request.user.id)
-    return render(request,'index.html',{'profile':profile})
+    title='Home'
+    return render(request,'index.html',{'profile':profile,'title':title})
 
 def profile(request):
     profile=Profile.objects.filter(user=request.user)

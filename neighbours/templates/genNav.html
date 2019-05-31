@@ -21,6 +21,11 @@
 
         </div>
       </li>
+      {%if profile%}
+      <li class="nav-item active">
+        <a id="ho" class="nav-link" href="/feeds/neighbour/">Hood Activities <span class="sr-only">(current)</span></a>
+      </li>
+      {%endif%}
     </ul>
     <a class="btn btn-success btn-sm" href="/">Add Business</a>
     {%else%}
