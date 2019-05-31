@@ -95,4 +95,4 @@ def feeds(request):
         form=PostForm()
     title='Feeds'
 
-    return render(request,"feeds.html",{"business":business,'form':form,'feed':feed,'hoods':all_hoods,'title':title,'pop':pop_count})
+    return render(request,"feeds.html",{"business":business,'form':form,'feed':feed,'hoods':all_hoods,'title':title,'pop':pop_count ,'profile':profile})

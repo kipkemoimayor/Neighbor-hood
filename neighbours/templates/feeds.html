@@ -56,7 +56,9 @@
       <div id="top" class="card">
         <div  class="card-body">
           <h4>Next Door Trending News</h4>
-          <i>{{user}} Share whats in your mind</i>
+          {%for i in profile%}
+          <a href="/profile/"><img title="See profile" height="50" width="50" class="rounded-circle" src="{{i.image.url}}" alt=""></a><i> Share whats in your mind</i>
+          {%endfor%}
           <form class="" enctype="multipart/form-data" action="/feeds/neighbour/" method="post">
             {%csrf_token%}
             {%bootstrap_form form layout='inline'%}
