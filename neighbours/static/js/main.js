@@ -1,6 +1,9 @@
 $(document).ready(function() {
-  
 
+  $("#hide").click(function(){
+    $("#show").show()
+    $("#hide").hide()
+  })
   // $("#send").submit(function(event) {
   //   event.preventDefault()
   //   form=$("#send")

@@ -24,8 +24,14 @@
 
       </div>
       <br>
-        <h5>Secondary Email {{pro.secondaryEmail}}</h5>
+        <p>Secondary Email:{{pro.secondaryEmail}}</p>
         <h5>{{pro.location}}</h5>
+        <a id='hide'>Change Hood</a>
+        <form id="show" class="form-group animated fadeIn" action="/profile/" method="post" enctype="multipart/form-data">
+          {%csrf_token%}
+          {%bootstrap_form change%}
+          <button  type="submit" class="btn btn-success btn-sm" >Change</button>
+        </form>
       {%endfor%}
       {%else%}
       <p>Welcome  {{user}}</p>

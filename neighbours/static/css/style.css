@@ -100,3 +100,7 @@ height: 100%;
 .pap{
   padding: 10px;
 }
+#show{
+  display: none;
+  
+}

@@ -32,11 +32,8 @@
       </div>
       <div class="modal-body" style='text-align:center'>
         <p>location {{hud.location}}</p>
-        {%for i in pop%}
-        {%if i.neigbor_id is hud.id%}
         <p>Population count {{pop|length}} </p>
-        {%endif%}
-        {%endfor%}
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>

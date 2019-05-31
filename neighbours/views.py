@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import ProfileForm,BusinessForm,PostForm,UpdateForm
+from .forms import ProfileForm,BusinessForm,PostForm,UpdateForm,ChangeHood
 from .models import Profile,Businesses,Neighbour,Feeds
 from django.http import HttpResponse,Http404
 
@@ -24,9 +24,18 @@ def profile(request):
     else:
         form=UpdateForm()
 
+    if request.method=="POST":
+        instance=Profile.objects.get(user=request.user)
+        change=ChangeHood(request.POST  or None,request.FILES,instance=instance)
+        if change.is_valid():
+            chan=change.save(commit=False)
+            chan.save()
+        return redirect('profile')
+    else:
+        change=ChangeHood()
 
     title='Profile'
-    return render(request,'profile.html',{'profile':profile,"form":form,'title':title})
+    return render(request,'profile.html',{'profile':profile,"form":form,'title':title,'change':change})
 
 def edit(request):
 
@@ -85,4 +94,5 @@ def feeds(request):
     else:
         form=PostForm()
     title='Feeds'
+
     return render(request,"feeds.html",{"business":business,'form':form,'feed':feed,'hoods':all_hoods,'title':title,'pop':pop_count})
