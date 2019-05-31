@@ -10,7 +10,7 @@ def index(request):
 
 def profile(request):
     profile=Profile.objects.filter(user=request.user)
-    
+
     if request.method=='POST':
         instance=Profile.objects.get(user=request.user)
         form=UpdateForm(request.POST or None,request.FILES,instance=instance)
@@ -24,8 +24,8 @@ def profile(request):
         form=UpdateForm()
 
 
-
-    return render(request,'profile.html',{'profile':profile,"form":form})
+    title='Profile'
+    return render(request,'profile.html',{'profile':profile,"form":form,'title':title})
 
 def edit(request):
 

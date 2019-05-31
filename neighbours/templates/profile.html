@@ -28,9 +28,10 @@
         <h5>{{pro.location}}</h5>
       {%endfor%}
       {%else%}
-      <p>  {{user}}</p>
-      {{user.email}}
-      <p class="alert alert-info">Update Profile</p>
+      <p>Welcome  {{user}}</p>
+      <img src="/static/img/ic.png" class="rounded-circle img-fluid" alt="{{user}}">
+
+      <p class="alert alert-danger">PLease Update your Profile for better experience</p>
       {%endif%}
     </div>
     <div class="col-md-8">
