@@ -10,6 +10,19 @@ class Neighbour(models.Model):
     def __str__(self):
         return self.name
 
+    def create_neigborhood(self):
+        self.save()
+
+    def delete_neigborhood(self):
+        neigbor=Neighbour.objects.all().delete()
+        return neigbor
+    @classmethod
+    def find_neigborhood(cls,neigborhood_id):
+        neigbor=cls.objects.filter(id=neigborhood_id)
+        return neigbor
+
+
+
 
 
 class Profile(models.Model):
@@ -33,6 +46,21 @@ class Businesses(models.Model):
 
     def __str__(self):
         return self.businessesName
+
+    def create_business(self):
+        self.save()
+    def delete_business(self):
+        busines=Businesses.objects.all().delete()
+        return busines
+
+    def update_business(self):
+        updated=Businesses.objects.filter(id=1).update(businessesName='collo')
+        return updated
+    @classmethod
+    def find_business(cls,business_id):
+        busines=cls.objects.filter(id=business_id)
+        return busines
+
 
 class Feeds(models.Model):
     image=models.ImageField(upload_to='feeds/',blank=True)
