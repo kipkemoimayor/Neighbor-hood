@@ -6,7 +6,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-3">
-      <p class="alert alert-success">Your current NeigbourHood</p>
+      <p class="alert alert-info">Your current NeigbourHood</p>
       {%for hud in hoods%}
         <ul class="list-group">
           <a data-toggle="modal" data-target="#{{hud.name}}" href="#"><li class="list-group-item">{{hud.name}}</li></a>
@@ -89,7 +89,7 @@
 
     </div>
     <div class="col-md-3">
-      <p class="alert alert-success">Businesses nearby  </p>
+      <p class="alert alert-info">Businesses nearby  </p>
       {%if business%}
       {%for busi in business%}
         <ul class="form-group">
