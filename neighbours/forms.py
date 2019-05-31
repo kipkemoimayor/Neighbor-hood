@@ -19,6 +19,11 @@ class BusinessForm(forms.ModelForm):
     class Meta:
         model=Businesses
         exclude=['user',]
+        widgets={
+            'businessesName': forms.TextInput(attrs={'placeholder':'Add a business Name'}),
+            'email': forms.TextInput(attrs={'placeholder':'Add a business email'}),
+            
+        }
 
 class PostForm(forms.ModelForm):
     class Meta:
