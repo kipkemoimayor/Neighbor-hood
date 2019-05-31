@@ -9,9 +9,10 @@ def index(request):
     return render(request,'index.html',{'profile':profile})
 
 def profile(request):
-    instance=Profile.objects.get(user=request.user)
     profile=Profile.objects.filter(user=request.user)
+    
     if request.method=='POST':
+        instance=Profile.objects.get(user=request.user)
         form=UpdateForm(request.POST or None,request.FILES,instance=instance)
         if form.is_valid():
             upda=form.save(commit=False)

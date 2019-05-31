@@ -6,7 +6,7 @@
   <div class="row">
     <div id="pro" class="col-md-4">
       <br>
-
+      {%if profile%}
       {%for pro in profile%}
 
       <div class="img">
@@ -23,10 +23,15 @@
       </div>
 
       </div>
-
-
+      <br>
+        <h5>Secondary Email {{pro.secondaryEmail}}</h5>
+        <h5>{{pro.location}}</h5>
       {%endfor%}
-
+      {%else%}
+      <p>  {{user}}</p>
+      {{user.email}}
+      <p class="alert alert-info">Update Profile</p>
+      {%endif%}
     </div>
     <div class="col-md-8">
       <div class="imagePro">
