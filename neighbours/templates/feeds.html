@@ -64,7 +64,8 @@
         <div  class="card-body">
           <h4>Next Door Trending News</h4>
           {%for i in profile%}
-          <a href="/profile/"><img title="See profile" height="50" width="50" class="rounded-circle" src="{{i.image.url}}" alt=""></a><i> Share whats in your mind</i>
+          {%if i.image%}
+          <a href="/profile/"><img title="See profile" height="50" width="50" class="rounded-circle" src="{{i.image.url}}" alt="">{%endif%}</a><i> Share whats in your mind</i>
           {%endfor%}
           <form class="" enctype="multipart/form-data" action="/feeds/neighbour/" method="post">
             {%csrf_token%}
@@ -77,6 +78,7 @@
       <br>
 
       <div class="feeds">
+        {%if feed%}
         {%for fed in feed%}
         <div class="card">
           <div class="card-header">
@@ -84,13 +86,16 @@
           </div>
           <p>{{fed.post}}</p>
           {%if fed.image%}
-          <img class="img-fluid" src="{{fed.image.url}}" alt="">
+          <img height="450" class="card-img-cap" src="{{fed.image.url}}" alt="">
           {%endif%}
           <div class="card-footer">
             <i></i>
           </div>
         </div>
         {%endfor%}
+        {%else%}
+        <p style="text-align:center" class="alert alert-info animated fadeIn">Hi {{user}} Its yout lucky day Be the 1st to Share Whats happening</p>
+        {%endif%}
 
       </div>
 

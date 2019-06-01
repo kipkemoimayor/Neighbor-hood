@@ -44,7 +44,7 @@
       <div class="imagePro">
         <div class="overlay">
           <form id="search" role="search" class="form-inline my-2 my-lg-0" action="{%url 'search'%}">
-          
+
             <input name="businessesName" class="form-control mr-sm-2" type="search" placeholder="Search business" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0 btn-sm" type="submit">Search</button>
           </form>
@@ -87,18 +87,26 @@
 
 <div class="row">
   <div class="col-md-6">
-    <h4>Your Posts</h4>
+    <h4 style='text-align:center' >Your Posts</h4>
+    {% if post%}
     {%for po in post%}
       <p>{{po.post}}</p>
     {%endfor%}
+    {%else%}
+    <p style='text-align:center' class="alert alert-info">{{user}} Share Whats happening in your hood <br> <a href="{%url 'feeds'%}">get started</a></p>
+    {%endif%}
   </div>
   <div class="col-md-6">
-<h4>business You have added</h4>
+<h4 style='text-align:center' >Business You have added</h4>
+{% if busi%}
 {%for bu in busi%}
 <ul class="list-group">
   <li class="list-group-item">{{bu.businessesName}}</li>
 </ul>
 {%endfor%}
+{%else%}
+<p style='text-align:center' class="alert alert-info">{{user}} Share your 1st busines <br> <a href="{%url 'busi'%}">get started</a></p>
+{%endif%}
   </div>
 
 </div>
