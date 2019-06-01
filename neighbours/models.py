@@ -6,6 +6,8 @@ class Neighbour(models.Model):
     name=models.CharField(max_length=250)
     location=models.CharField(max_length=220)
     occupationCount=models.IntegerField()
+    police=models.CharField(max_length=50,blank=True)
+    hospital=models.CharField(max_length=60,blank=True)
 
     def __str__(self):
         return self.name

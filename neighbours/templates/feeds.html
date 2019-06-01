@@ -51,10 +51,13 @@
       <hr class="bg-success">
       <h6 id="health" class="animated fadeIn">All available Police and Health centers</h6>
       <br>
+      {%for hos in hoods%}
       <ul class="list-group">
-        <li class="list-group-item">Mash</li>
+        <li class="list-group-item">{{hos.police}}</li>
+        <li class="list-group-item">{{hos.hospital}}</li>
 
       </ul>
+      {%endfor%}
     </div>
     <div class="col-md-6">
       <div id="top" class="card">
