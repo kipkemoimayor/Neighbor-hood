@@ -2,13 +2,14 @@ from django.shortcuts import render,redirect
 from .forms import ProfileForm,BusinessForm,PostForm,UpdateForm,ChangeHood
 from .models import Profile,Businesses,Neighbour,Feeds
 from django.http import HttpResponse,Http404
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
     profile=Profile.objects.filter(user_id=request.user.id)
     title='Home'
     return render(request,'index.html',{'profile':profile,'title':title})
-
+@login_required(login_url='/accounts/login/')
 def profile(request):
     profile=Profile.objects.filter(user=request.user)
     busi=Businesses.objects.filter(user=request.user)
@@ -37,7 +38,7 @@ def profile(request):
 
     title='Profile'
     return render(request,'profile.html',{'profile':profile,"busi":busi,'post':post,"form":form,'title':title,'change':change})
-
+@login_required(login_url='/accounts/login/')
 def edit(request):
 
     if request.method=='POST':
@@ -53,7 +54,7 @@ def edit(request):
 
     title="Edit"
     return render(request,'edit.html',{'form':form,'title':title})
-
+@login_required(login_url='/accounts/login/')
 def business(request):
     if request.method=='POST':
         form=BusinessForm(request.POST)
@@ -66,7 +67,7 @@ def business(request):
     else:
         form=BusinessForm()
     return render(request,'business.html',{'form':form})
-
+@login_required(login_url='/accounts/login/')
 def feeds(request):
 
     try:
