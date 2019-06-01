@@ -8,10 +8,14 @@
     <div class="col-md-3">
       <p class="alert alert-info">Your current NeigbourHood</p>
       {%for hud in hoods%}
+
+
+
         <ul class="list-group">
           <a data-toggle="modal" data-target="#{{hud.name}}" href="#"><li class="list-group-item">{{hud.name}}</li></a>
 
         </ul>
+
 
         <!-- Side Modal Top Right -->
 
@@ -20,7 +24,7 @@
   aria-hidden="true">
 
   <!-- Add class .modal-side and then add class .modal-top-right (or other classes from list above) to set a position to the modal -->
-  <div class="modal-dialog modal-side modal-top-left" role="document">
+  <div  class="modal-dialog modal-side modal-top-left" role="document">
 
 
     <div class="modal-content">
@@ -91,11 +95,15 @@
     <div class="col-md-3">
       <p class="alert alert-info">Businesses nearby  </p>
       {%if business%}
+      <div class="card">
       {%for busi in business%}
+
         <ul class="form-group">
           <li class="list-group-item">{{busi.businessesName}}</li>
         </ul>
+
       {%endfor%}
+      </div>
       {%else%}
       <p class="alert alert-info">Hi <strong>{{user}}</strong> No business  has been registered yet in your area <br>
           <a href="">Add a business</a>
