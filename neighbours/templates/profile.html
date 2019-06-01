@@ -43,8 +43,9 @@
     <div class="col-md-8">
       <div class="imagePro">
         <div class="overlay">
-          <form id="search" class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search NeighbourHood" aria-label="Search">
+          <form id="search" role="search" class="form-inline my-2 my-lg-0" action="{%url 'search'%}">
+          
+            <input name="businessesName" class="form-control mr-sm-2" type="search" placeholder="Search business" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0 btn-sm" type="submit">Search</button>
           </form>
 

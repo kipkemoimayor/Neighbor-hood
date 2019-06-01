@@ -167,3 +167,17 @@ height: 100%;
   padding: 10px;
 
 }
+.searched{
+  margin: auto;
+  width: 70%;
+}
+.searched h5{
+  color: white;
+}
+.makeFeed{
+  width: 80%;
+  margin: auto;
+}
+.makeFeed input{
+  padding: 8px !important;
+}

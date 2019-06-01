@@ -9,6 +9,7 @@ urlpatterns=[
     url(r"^edit/",views.edit,name="edit"),
     url(r"^add/business/$",views.business,name='busi'),
     url(r'^feeds/neighbour/$',views.feeds,name="feeds"),
+    url(r'^busines/search/results/',views.search,name='search')
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

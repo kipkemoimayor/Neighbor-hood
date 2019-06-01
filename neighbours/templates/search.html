@@ -1,0 +1,52 @@
+{%extends 'base.html'%}
+{%load bootstrap4%}
+{%block content%}
+{%include 'genNav.html'%}
+<div class="all">
+
+
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="searched">
+      {%if business%}
+      <p>Found {{business|length}} Match</p>
+      {%else%}
+      <p class="alert alert-info">No results founf for <strong>{{name}}</strong> </p>
+      <img src="/static/img/tenor.gif" alt="">
+      <ul class="list-group">
+        <li class="list-group-item">Try English words</li>
+        <li class="list-group-item">Use key words eg:Milk</li>
+        <br>
+        <p>Please Try again</p>
+      </ul>
+      {%endif%}
+      {%for bus in business%}
+
+
+
+        <div class="card">
+          <div class="card-header bg-success">
+            <h5>Name {{bus.businessesName}}</h5>
+          </div>
+          <div class="card-body">
+            <p><strong>Owner</strong> {{bus.user}}</p>
+            <p><strong>NeighbourHood</strong> {{bus.neigbor.name}}</p>
+            <p><strong>Contact</strong> {{bus.user.email}}</p>
+
+          </div>
+
+        </div>
+          </div>
+      {%endfor%}
+    </div>
+    <div class="col-md-3"></div>
+
+  </div>
+
+</div>
+</div>
+
+{%endblock%}

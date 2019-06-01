@@ -12,7 +12,7 @@
 
 
         <ul class="list-group">
-          <a data-toggle="modal" data-target="#{{hud.name}}" href="#"><li class="list-group-item">{{hud.name}}</li></a>
+          <a data-toggle="modal" data-target="#{{hud.name}}" href="#"><li class="list-group-item">{{hud.name}} || view  details</li> </a>
 
         </ul>
 
@@ -94,12 +94,21 @@
     </div>
     <div class="col-md-3">
       <p class="alert alert-info">Businesses nearby  </p>
+      <div class="makeFeed">
+        <form role="search" class="form-group" action="{%url 'search'%}" >
+          <input name="businessesName" placeholder="Search for business" role="search" class="form-control" type="search" name="" value="">
+        </form>
+      </div>
+
       {%if business%}
       <div class="card">
       {%for busi in business%}
 
         <ul class="form-group">
-          <li class="list-group-item">{{busi.businessesName}}</li>
+          <li title='Contact {{busi.email}}' class="list-group-item">{{busi.businessesName}}
+          <ul>
+            <li class="">Owner {{busi.user}}</li>
+          </ul></li>
         </ul>
 
       {%endfor%}

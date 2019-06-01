@@ -61,6 +61,11 @@ class Businesses(models.Model):
         busines=cls.objects.filter(id=business_id)
         return busines
 
+    @classmethod
+    def search_business(cls,name):
+        busines=cls.objects.filter(businessesName__icontains=name)
+        return busines
+
 
 class Feeds(models.Model):
     image=models.ImageField(upload_to='feeds/',blank=True)
